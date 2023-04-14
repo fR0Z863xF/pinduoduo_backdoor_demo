@@ -1,8 +1,5 @@
 name: Build APK
 on:
-  push:
-    tags:
-      - '*'
 
 jobs:
   Gradle:
@@ -17,9 +14,4 @@ jobs:
     - name: Make Gradle executable
       run: chmod +x ./src/gradlew
     - name: Build Release APK
-      run: ./src/gradlew assembleRelease
-    - name: Releasing using Hub
-      uses: fR0Z863xF/src@main
-      env:
-       GITHUB_TOKEN: ${{ secrets.TOKEN }}
-       APP_FOLDER: app
+      run: ./src/gradlew build
