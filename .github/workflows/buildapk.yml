@@ -14,4 +14,5 @@ jobs:
     - name: Make Gradle executable
       run: chmod +x ./src/gradlew
     - name: Build Release APK
-      run: ./src/gradlew build
+      run: cd ./src
+           ./gradlew build
