@@ -1,5 +1,5 @@
 name: Build APK
-on: [push]
+on: [workflow_dispatch]
 
 jobs:
   Gradle:
@@ -14,5 +14,6 @@ jobs:
     - name: Make Gradle executable
       run: chmod +x ./src/gradlew
     - name: Build Release APK
-      run: cd ./src
-           ./gradlew build
+      run: |
+        cd ./src
+        ./gradlew build
